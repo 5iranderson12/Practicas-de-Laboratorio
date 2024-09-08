@@ -1,0 +1,50 @@
+console.log("Menu opciones");
+console.log("1. Mediante un for, encontrar el mayor de una lista");
+console.log("2. Mediante un While imprimir los impares del 1-20");
+console.log("3. Mediante un do-while detener el programa cuando lleguemos a un numero random x\n");
+
+let opcion = 3; // Puedes cambiar las opciones
+
+
+switch (opcion) {
+    case 1:
+        console.log("Has ingresado a la opcion 1\n");
+        // Implementación de la opción 1: Encontrar el mayor de una lista
+        const lista = [5, 2, 8, 1, 9, 3, 7];
+        let mayor = lista[0];
+        for (let i = 1; i < lista.length; i++) {
+            if (lista[i] > mayor) {
+                mayor = lista[i];
+            }
+        }
+        console.log("El mayor número de la lista es:", mayor);
+        break;
+
+    case 2:
+        console.log("Has ingresado a la opcion 2\n");
+        // Implementación de la opción 2: Imprimir impares del 1 al 20
+        let num = 1;
+        while (num <= 20) {
+            if (num % 2 !== 0) {
+                console.log(num);
+            }
+            num++;
+        }
+        break;
+
+    case 3:
+        console.log("Has ingresado a la opcion 3\n");
+        // Implementación de la opción 3: Detener el programa al llegar a un número aleatorio
+        const randomTarget = Math.floor(Math.random() * 10) + 1; // Número aleatorio entre 1 y 10
+        let currentNum = 0;
+        do {
+            currentNum++;
+            console.log("Número actual:", currentNum);
+        } while (currentNum !== randomTarget);
+        console.log("Se ha alcanzado el número objetivo:", randomTarget);
+        break;
+
+    default:
+        console.log("Debe ingresar una opción correcta 1 - 3");
+        break;
+}
