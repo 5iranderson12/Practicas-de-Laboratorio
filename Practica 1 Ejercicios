@@ -1,0 +1,40 @@
+console.log("Menu de opciones")
+console.log("1.Resulatdo de la nota")
+console.log("2.Mostrar mayor de 2 numeros/n")
+
+let opcion = 1;
+
+switch (opcion) {
+   case 1:
+      console.log("Has ingresado a la opcion 1")
+
+      let nota = 8.0;
+
+      if (nota >=6.0)
+
+      } else { 
+
+      console.log("Losiento estas reprobado con" + nota)
+
+      }
+
+      break;
+
+case 2;
+  let numero1=10;
+  let numero2=20;
+
+if (numero1 > numero2) {
+
+     console.log("El numero mayor es " + numero1);
+
+} else {
+     console.log("El numero mayor es " + numero2);
+
+}
+
+    break;
+
+default:
+console.log("Debes de ingresar la opcion correcta 1 -2");
+break;
