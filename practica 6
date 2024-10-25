@@ -1,0 +1,42 @@
+// Menú de opciones
+console.log("Menu opciones");
+console.log("1. Mostrar el número mayor de un arreglo o de lista");
+console.log("2. Imprimir el total de vocales y mostrar cuáles son de una cadena\n");
+
+// Función para mostrar el número mayor en un arreglo
+function mostrarNumeroMayor(arr) {
+    return Math.max(...arr);
+}
+
+// Función para contar vocales y mostrar cuáles son
+function contarVocales(cadena) {
+    let vocales = ['a', 'e', 'i', 'o', 'u'];
+    let totalVocales = 0;
+    let listaVocales = [];
+
+    for (let char of cadena.toLowerCase()) {
+        if (vocales.includes(char)) {
+            totalVocales++;
+            listaVocales.push(char);
+        }
+    }
+
+    return { totalVocales, listaVocales };
+}
+
+// Interacción con el usuario
+let opcion = prompt("Elija una opción (1, 2):");
+
+switch (opcion) {
+    case "1":
+        let arreglo = prompt("Ingrese una lista de números separados por comas:").split(',').map(Number);
+        let mayor = mostrarNumeroMayor(arreglo);
+        console.log("El número mayor es: " + mayor);
+        break;
+    case "2":
+        let cadena = prompt("Ingrese una cadena de texto:");
+        let resultadoVocales = contarVocales(cadena);
+        console.log("Total de vocales: " + resultadoVocales.totalVocales);
+        console.log("Vocales encontradas: " + resultadoVocales.listaVocales.join(', '));
+        break;
+    default:
