@@ -1,0 +1,45 @@
+// Menú de opciones
+console.log("Menu opciones");
+console.log("1. Convertir un string o un array string en mayúscula");
+console.log("2. Convertir un string o un array string en minúscula\n");
+
+// Función para convertir a mayúsculas
+function convertirAMayuscula(input) {
+    if (Array.isArray(input)) {
+        return input.map(cadena => cadena.toUpperCase());
+    } else {
+        return input.toUpperCase();
+    }
+}
+
+// Función para convertir a minúsculas
+function convertirAMinuscula(input) {
+    if (Array.isArray(input)) {
+        return input.map(cadena => cadena.toLowerCase());
+    } else {
+        return input.toLowerCase();
+    }
+}
+
+// Interacción con el usuario
+let opcion = prompt("Elija una opción (1, 2):");
+
+switch (opcion) {
+    case "1":
+        let entradaMayuscula = prompt("Ingrese una cadena o una lista de cadenas separadas por comas:");
+        let resultadoMayuscula = entradaMayuscula.includes(",") 
+            ? convertirAMayuscula(entradaMayuscula.split(','))
+            : convertirAMayuscula(entradaMayuscula);
+        console.log("Resultado en mayúsculas: ", resultadoMayuscula);
+        break;
+    case "2":
+        let entradaMinuscula = prompt("Ingrese una cadena o una lista de cadenas separadas por comas:");
+        let resultadoMinuscula = entradaMinuscula.includes(",") 
+            ? convertirAMinuscula(entradaMinuscula.split(','))
+            : convertirAMinuscula(entradaMinuscula);
+        console.log("Resultado en minúsculas: ", resultadoMinuscula);
+        break;
+    default:
+        console.log("Opción no válida");
+        break;
+}
