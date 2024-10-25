@@ -1,0 +1,47 @@
+// Menú de opciones
+console.log("Menu opciones:");
+console.log("1. Función para cálculo de salario");
+console.log("2. Función para cálculo de descuentos");
+console.log("3. Función para cálculo de área de rectángulo\n");
+
+// Función para cálculo de salario
+function calcularSalario(horasTrabajadas, pagoPorHora) {
+    return horasTrabajadas * pagoPorHora;
+}
+
+// Función para cálculo de descuentos
+function calcularDescuento(precio, porcentajeDescuento) {
+    return precio - (precio * (porcentajeDescuento / 100));
+}
+
+// Función para cálculo del área de un rectángulo
+function calcularAreaRectangulo(base, altura) {
+    return base * altura;
+}
+
+// Interacción con el usuario
+let opcion = prompt("Elija una opción (1, 2, 3):");
+
+switch(opcion) {
+    case "1":
+        let horas = parseFloat(prompt("Ingrese las horas trabajadas:"));
+        let pago = parseFloat(prompt("Ingrese el pago por hora:"));
+        let salario = calcularSalario(horas, pago);
+        console.log("El salario calculado es: " + salario);
+        break;
+    case "2":
+        let precio = parseFloat(prompt("Ingrese el precio del producto:"));
+        let descuento = parseFloat(prompt("Ingrese el porcentaje de descuento:"));
+        let precioConDescuento = calcularDescuento(precio, descuento);
+        console.log("El precio con descuento es: " + precioConDescuento);
+        break;
+    case "3":
+        let base = parseFloat(prompt("Ingrese la base del rectángulo:"));
+        let altura = parseFloat(prompt("Ingrese la altura del rectángulo:"));
+        let area = calcularAreaRectangulo(base, altura);
+        console.log("El área del rectángulo es: " + area);
+        break;
+    default:
+        console.log("Opción no válida");
+        break;
+}
